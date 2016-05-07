@@ -4,6 +4,8 @@
 [![license](https://img.shields.io/npm/l/m3u8-write.svg)](https://npmjs.org/package/m3u8-write)
 [![downloads](https://img.shields.io/npm/dm/m3u8-write.svg)](https://npmjs.org/package/m3u8-write)
 
+Simple create .m3u8 playlists using array of lines
+
 ## Example
 
 #### input

@@ -1,7 +1,7 @@
 {
   "name": "m3u8-write",
   "version": "0.0.0",
-  "description": "",
+  "description": "Simple create .m3u8 playlists using array of lines",
   "main": "index.js",
   "scripts": {
     "test": "tape test.js"
