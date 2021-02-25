@@ -5,7 +5,7 @@ module.exports = m3u
 const isString = s => typeof s === 'string'
 const isObject = o => o && typeof o === 'object'
 
-const keysToExcludeFormatting = ["RESOLUTION", "FRAME_RATE"];
+const keysToExcludeFormatting = ["RESOLUTION", "FRAME-RATE"];
 const excludeKeyFromFormatting = key => key && keysToExcludeFormatting.includes(key);
 
 function m3u(obj) {
