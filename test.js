@@ -30,3 +30,14 @@ test('objects', function (t) {
   }} ]), expected)
   t.end()
 })
+
+
+test('excludes keys "RESOLUTION" and "FRAME_RATE"', function (t) {
+  const expected = `#EXTM3U\n#EXT-X-LIST:RESOLUTION=1920x1080,FRAME_RATE=30.000,PARAM3="value"`
+  t.equal(m3u([ {list: {
+    resolution:"1920x1080",
+    frame_rate: "30.000",
+    param3: "value"
+  }} ]), expected)
+  t.end()
+})
