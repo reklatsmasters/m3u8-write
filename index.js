@@ -5,6 +5,9 @@ module.exports = m3u
 const isString = s => typeof s === 'string'
 const isObject = o => o && typeof o === 'object'
 
+const keysToExcludeFormatting = ["RESOLUTION", "FRAME_RATE"];
+const excludeKeyFromFormatting = key => key && keysToExcludeFormatting.includes(key);
+
 function m3u(obj) {
   if (!Array.isArray(obj)) {
     throw new TypeError('expected array of objects')
@@ -52,5 +55,10 @@ function formatValue(s) {
 }
 
 function formatChildObj(o) {
-  return Object.keys(o).map(key => key.toUpperCase() + '=' + formatValue(o[key])).join(',')
+  return Object.keys(o).map(key => {
+    const upKey = key.toUpperCase();
+    const value = o[key];
+    const formattedValue = excludeKeyFromFormatting(upKey) ? value : formatValue(value)
+    return  upKey + '=' + formattedValue;
+  }).join(',')
 }
