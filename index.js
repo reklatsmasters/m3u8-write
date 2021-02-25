@@ -5,6 +5,12 @@ module.exports = m3u
 const isString = s => typeof s === 'string'
 const isObject = o => o && typeof o === 'object'
 
+/**
+ * See [HTTP Live Streaming
+ * specifications](https://tools.ietf.org/html/rfc8216#section-4.2) The value
+ * types of `RESOLUTION` (`decimal-resolution`) and `FRAME-RATE`
+ * (`decimal-floating-point`) must not be "quoted".
+ */
 const keysToExcludeFormatting = ["RESOLUTION", "FRAME-RATE"];
 const excludeKeyFromFormatting = key => key && keysToExcludeFormatting.includes(key);
 
